@@ -18,11 +18,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         brightness: Brightness.light,
         textTheme: TextTheme(
-          headlineLarge: TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold, color: Colors.black),
-          bodyLarge: TextStyle(fontSize: 16.0, color: Colors.grey[600]),
+          headlineLarge: TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold, color: Colors.black),  // Corrigido
+          bodyLarge: TextStyle(fontSize: 16.0, color: Colors.grey[600]),  // Corrigido
         ),
       ),
-      home: HomeScreen(),
+      home: HomeScreen(),  // Atualizado para usar a HomeScreen
     );
   }
 }
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Grasieli Pinheiro Consultoria'),
+        title: Text('MFIT Personal'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 CircleAvatar(
                   radius: 30,
-                  backgroundImage: AssetImage('assets/profile_picture.png'),
+                  backgroundImage: AssetImage('assets/profile_picture.png'), // Substitua pela imagem do perfil
                 ),
                 SizedBox(width: 10),
                 Column(
@@ -112,6 +112,7 @@ class HomeScreen extends StatelessWidget {
   Widget _buildMenuButton(String title, IconData icon, BuildContext context) {
     return ElevatedButton(
       onPressed: () {
+        // Ação para cada botão
         if (title == 'Treinos') {
           Navigator.push(context, MaterialPageRoute(builder: (context) => CalendarScreen()));
         } else if (title == 'Treinos Extra') {
@@ -127,8 +128,8 @@ class HomeScreen extends StatelessWidget {
         }
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.white,
+        backgroundColor: Colors.blue, // Cor de fundo do botão
+        foregroundColor: Colors.white, // Cor do texto do botão
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
